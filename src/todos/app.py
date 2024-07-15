@@ -6,8 +6,6 @@ from _utils import *
 from ._todo import todo
 from .maindb import *
 
-DatabaseType = List[Tuple[int, str, str]]
-
 @caution()
 def app():
     settings = Settings.get_data()['settings']
@@ -19,7 +17,7 @@ def app():
     os.makedirs(db_dir, exist_ok=True)
     
     cursor, conn = db_connect(db_file)
-    databases:  DatabaseType = db_query(cursor)
+    databases = db_query(cursor)
     
     if len(databases) != 0:    
         printList(databases)
@@ -45,7 +43,7 @@ def app():
         # // print(databases)
         try:
             # ! When 0 is entered the the index become -1 which refers to the last item in the database list.
-            todo(databases[int(choice)-1][1])
+            todo(databases[int(choice)-1][0])
         except IndexError:
             console.print("Invalid ID", style="red bold")
 

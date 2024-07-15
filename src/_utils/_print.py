@@ -2,8 +2,8 @@ from ._rich import *
 
 def printList(list):
     print()
-    for item in list:
-        console.print(f" id: [i]%2d[/i], title: [i] {item[1]}[/i]" % item[0], style="green bold" )
+    for item in range(len(list)):
+        console.print(f" id: [i]%2d[/i], title: [i] {list[item][0]}[/i]" % (item + 1), style="green bold" )
     print()
         
 def printMenu():

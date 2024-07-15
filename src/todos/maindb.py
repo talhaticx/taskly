@@ -16,7 +16,6 @@ def db_connect(file:str):
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tasks_list (
-            id INTEGER PRIMARY KEY,
             name TEXT NOT NULL UNIQUE,
             description TEXT
         )
@@ -32,7 +31,7 @@ def db_query(cursor):
         cursor (sqlite3 object): cursor
 
     Returns:
-        list of tuple ('id', 'name', 'description')
+        list of tuple ('name', 'description')
     """
     
     cursor.execute("Select * FROM tasks_list")
@@ -73,15 +72,17 @@ def db_delete(cursor, conn, tasks):
     """
     
     printList(tasks)
-    id = console.input("[b][i]Enter ID: [/i][/b] ")
-    
+    id = int(console.input("[b][i]Enter ID: [/i][/b] ")) -1
+    dir = Settings.get_data()
+    dir = Settings.get_data()["settings"]["database_dir"]
+    name = tasks[id][0]
+    path = f'{dir}{name}.db'
+    delete_file(path)
     cursor.execute('''
         DELETE FROM tasks_list
-        WHERE id = ?               
-    ''', (id,))
+        WHERE name = ?               
+    ''', (tasks[id][0],))
     conn.commit()
-    try:
-        delete_file(f'{Settings.get_data()["database_dir"]}{tasks[id]}.db')
-    except:
-        print("Error")
-        
+    console.print("Database was deleted", style="red bold")
+
+
