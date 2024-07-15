@@ -1,61 +1,14 @@
-from ._todo import todo
-from _utils import *
 import os
-import sqlite3
+from typing import List, Tuple
 
-def db_connect(file):
-    conn = sqlite3.connect(file)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS tasks_list (
-            id INTEGER PRIMARY KEY,
-            name TEXT NOT NULL UNIQUE,
-            description TEXT
-        )
-    ''')
-    
-    return cursor, conn
+from _utils import *
 
-@cation()
-def db_query(cursor):
-    cursor.execute("Select * FROM tasks_list")
-    data = cursor.fetchall()
-    return data
+from ._todo import todo
+from .maindb import *
 
-@cation()
-def db_add(cursor, conn):
-    console.print("\nAdding a new Database\n", style="bold green", justify="center" )
-    name = console.input(("[b][i]Enter Name: [/i][/b] "))
-    while name == "":
-        name = console.input(("[b][i]Enter Name: [/i][/b] "))
-    description = console.input(("[b][i]Enter Description: [/i][/b] "))
-    try:
-        cursor.execute('''
-            INSERT INTO tasks_list (name, description)
-            VALUES (?, ?)
-        ''', (name, description))
-        console.print("Database was added", style="green bold")
-        conn.commit()
-    except sqlite3.IntegrityError:
-        print("Task with the same Name already exists.")
-        
-@cation()
-def db_delete(cursor, conn, tasks):
-    printList(tasks)
-    id = console.input("[b][i]Enter ID: [/i][/b] ")
-    
-    cursor.execute('''
-        DELETE FROM tasks_list
-        WHERE id = ?               
-    ''', (id,))
-    conn.commit()
-    try:
-        delete_file(f'{Settings.get_data()["database_dir"]}{tasks[id]}.db')
-    except:
-        print("Fuck You")
+DatabaseType = List[Tuple[int, str, str]]
 
-
-@cation()
+@caution()
 def app():
     settings = Settings.get_data()['settings']
 
@@ -66,7 +19,7 @@ def app():
     os.makedirs(db_dir, exist_ok=True)
     
     cursor, conn = db_connect(db_file)
-    databases = db_query(cursor)
+    databases:  DatabaseType = db_query(cursor)
     
     if len(databases) != 0:    
         printList(databases)
@@ -79,6 +32,7 @@ def app():
         db_add(cursor, conn)
     elif choice == 'd':
         db_delete(cursor, conn, databases)
+
     # ! don't remove this, necessary for exiting the program and also for the correct functionality of the program
     elif choice == '0':
         console.print("Exiting...", style="red bold")
