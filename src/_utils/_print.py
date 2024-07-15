@@ -1,8 +1,10 @@
 from ._rich import *
 
 def printList(list):
+    print()
     for item in list:
         console.print(f" id: [i]%2d[/i], title: [i] {item[1]}[/i]" % item[0], style="green bold" )
+    print()
         
 def printMenu():
     table = Table(title="Task Manager Menu")
@@ -21,8 +23,9 @@ def printMenu():
     table.add_row(Padding("6", padding1), Padding("Mass remove task", padding2))
     table.add_row(Padding("7", padding1), Padding("Mass mark task as completed", padding2))
     table.add_row(Padding("0", (1,5,1,5)), Padding("Exit", (1,5,1,7)))
-
+    print()
     console.print(table, justify="center")
+    print()
 
 def printTask(database):
     tasks = database.query()
@@ -53,6 +56,6 @@ def printTask(database):
             Padding(str(task[2]), padding),
             Padding(":white_heavy_check_mark:" if task[3] else ":x:", padding)
         )
-
+    print()
     console.print(table, justify="center")
     print()
