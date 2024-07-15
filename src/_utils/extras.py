@@ -15,7 +15,7 @@ def clear_terminal():
         os.system('clear')
         print()
         
-def cation(msg="An error occurred", sleep_time=1):
+def caution(msg="An error occurred", sleep_time=1):
     def decorator(fn):
         def wrapper(*args, **kwargs):
             try:
