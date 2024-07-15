@@ -5,6 +5,8 @@ from rich.panel import Panel
 from rich import print
 
 def main():
+    clear_terminal()
+    cool_text("Todos")
     while True:
         done = app()
         if done == 0:
@@ -12,7 +14,7 @@ def main():
 
 
 if __name__ == "__main__":
-    
     clear_terminal()
     cool_text("Todos")
+
     main()

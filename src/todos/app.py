@@ -21,7 +21,7 @@ def app():
     
     if len(databases) != 0:    
         printList(databases)
-        console.print("Enter 'n' for new database\nEnter 'd' for deleting a database\nEnter id for opening a database\nEnter Choice: ", style="bold italic Blue", end="")
+        console.print("Enter 'n' for new database\nEnter 'd' for deleting a database\nEnter '0' to end program\nEnter id for opening a database\nEnter Choice: ", style="bold italic Blue", end="")
         choice = input()
     else:
         choice = 'n'
@@ -37,6 +37,9 @@ def app():
         cursor.close()
         conn.close()
         return 0
+    
+    elif choice == 'clear':
+        clear_terminal()
     else:
         cursor.close()
         conn.close()
