@@ -8,6 +8,7 @@ if __name__ == "__main__":
             use_scm_version={"version_scheme": "no-guess-dev"},
             # packages=find_packages(where='src'),
             # package_dir={'': 'src'},
+            package_data={'': ['scripts/reset.py']},
         )
     except Exception as e:
         print(
