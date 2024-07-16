@@ -1,33 +1,48 @@
 import os
-from typing import List, Tuple
 
 from _utils import *
 
 from ._todo import todo
 from .maindb import *
 
+
 @caution()
 def app():
-    settings = Settings.get_data()['settings']
+    """
+    The main function of the application. It handles user interactions, database management, and task management.
 
-    db_file = os.path.expanduser(f"~/todos/{settings["main_db"]}.db")
+    Returns:
+        False (0): for ending the program  
+    """
+    
+    settings: dict = Settings.get_data()['settings']
+
+    db_file: str = os.path.expanduser(f"~/todos/{settings["main_db"]}.db")
 
     # Ensure the directory exists
-    db_dir = os.path.dirname(db_file)
+    db_dir: str = os.path.dirname(db_file)
     os.makedirs(db_dir, exist_ok=True)
     
     cursor, conn = db_connect(db_file)
+    
+    # Fetch all databases from the database
     databases = db_query(cursor)
     
+    # Display the list of databases and ask user for choice
     if len(databases) != 0:    
         printList(databases)
         console.print("Enter 'n' for new database\nEnter 'd' for deleting a database\nEnter '0' to end program\nEnter id for opening a database\nEnter Choice: ", style="bold italic Blue", end="")
-        choice = input()
+        choice: str = input()
     else:
         choice = 'n'
 
+    # select action based on choice
+    
+    # add db
     if choice == 'n':
         db_add(cursor, conn)
+        
+    # delete db
     elif choice == 'd':
         db_delete(cursor, conn, databases)
 
@@ -38,8 +53,15 @@ def app():
         conn.close()
         return 0
     
+    # clear terminal
     elif choice == 'clear':
         clear_terminal()
+    
+    # prevent negative index
+    elif '-' in choice:
+        raise ValueError
+    
+    # open a db
     else:
         cursor.close()
         conn.close()

@@ -1,6 +1,14 @@
 from ._rich import *
 
-def printList(list):
+
+def printList(list: list):
+    """print list of database
+    if list of tasks, then will also show the status of completion in for of emojis
+
+    Args:
+        list (list): list of tuples from databases
+    """
+    
     try:
         print()
         for idx, item in enumerate(list):
@@ -13,6 +21,8 @@ def printList(list):
         print()
         
 def printMenu():
+    """print the menu for tasks
+    """
     table = Table(title="Task Manager Menu")
 
     table.add_column("Option", justify="center", style="red bold", no_wrap=True)
@@ -34,6 +44,11 @@ def printMenu():
     print()
 
 def printTask(database):
+    """print the tasks in the database
+
+    Args:
+        database (list): list of tuples containing ID, title, description and status of completion
+    """
     tasks = database.query()
     if not tasks:
         console.print("No tasks found.", style="red bold")

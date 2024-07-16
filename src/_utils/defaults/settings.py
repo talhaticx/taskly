@@ -1,4 +1,1 @@
-settings = {
-    "database_dir" : '~/todos/',
-    "main_db": 'main'
-}
+settings = {"database_dir": "~/todos/", "main_db": "main"}

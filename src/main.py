@@ -1,10 +1,14 @@
-from todos import app
-from _utils import *
+from rich import print
 from rich.layout import Layout
 from rich.panel import Panel
-from rich import print
+
+from _utils import *
+from todos import app
+
 
 def main():
+    """main function"""
+
     clear_terminal()
     cool_text("Todos")
     while True:
@@ -14,7 +18,4 @@ def main():
 
 
 if __name__ == "__main__":
-    clear_terminal()
-    cool_text("Todos")
-
     main()
