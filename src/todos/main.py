@@ -8,7 +8,7 @@ from todos import app
 
 def main():
     clear_terminal()
-    cool_text("Todos")
+    cool_text("TASKLY")
     """main function"""
     while True:
         done = app()

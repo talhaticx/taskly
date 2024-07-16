@@ -9,8 +9,8 @@ Make sure you have Python 3.8 or higher installed on your system.
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/talhaticx/todos.git
-   cd todos
+   git clone https://github.com/talhaticx/taskly.git
+   cd taskly
    ```
 
 2. **Setup Environment:**
@@ -23,10 +23,10 @@ Make sure you have Python 3.8 or higher installed on your system.
 
 ### Running the Application
 
-Once the installation is complete, you can run the `todos` application using the following command:
+Once the installation is complete, you can run the `taskly` application using the following command:
 
 ```bash
-todos
+taskly
 ```
 
 This will start the CLI-based todo app, allowing you to manage tasks efficiently.

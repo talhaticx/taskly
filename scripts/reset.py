@@ -26,7 +26,7 @@ def reset():
     database_dir = Settings.get_data()["settings"]["database_dir"]
     # Directories to delete
     dirs_to_delete = [
-        os.path.expanduser("~/.config/todos/"),
+        os.path.expanduser("~/.config/taskly/"),
         os.path.expanduser(database_dir),
     ]
 

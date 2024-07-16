@@ -20,7 +20,7 @@ class Database:
     """
 
     def __init__(self, name):
-        db_file = os.path.expanduser(f"~/todos/{name}.db")
+        db_file = os.path.expanduser(f"~/taskly/{name}.db")
 
         # Ensure the directory exists
         db_dir = os.path.dirname(db_file)

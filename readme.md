@@ -1,6 +1,6 @@
-# Todos CLI Application
+# TASKLY : A Todos CLI Application
 
-**Todos** is a command-line interface (CLI) based application for managing tasks across multiple databases. It allows users to create, manage, and organize tasks within different databases, providing flexibility and ease of use for personal task management needs.
+**taskly** is a command-line interface (CLI) based application for managing tasks across multiple databases. It allows users to create, manage, and organize tasks within different databases, providing flexibility and ease of use for personal task management needs.
 
 ## Features
 
@@ -15,8 +15,8 @@ For installation refer to this guide [Installation Guide](install.md).
 
 ## Usage
 
-1. **Setup**: Edit `settings.py` in `~/.config/todos/` to configure database directory and main database settings.
-2. **Run Application**: Execute `todos` command in your terminal to launch the Todos CLI application.
+1. **Setup**: Edit `settings.py` in `~/.config/taskly/` to configure database directory and main database settings.
+2. **Run Application**: Execute `taskly` command in your terminal to launch the Todos CLI application.
 3. **Navigate Menu**: Use numeric options to navigate through various tasks and databases management features.
 
 ## Requirements
@@ -29,7 +29,7 @@ For installation refer to this guide [Installation Guide](install.md).
 
 Contributions are welcome! If you have ideas for new features, improvements, or find any issues, please submit them via issues or fork the repository and create a pull request.
 
-1. Fork the repository [`https://github.com/talhaticx/todos`](https://github.com/talhaticx/todos)
+1. Fork the repository [`https://github.com/talhaticx/taskly`](https://github.com/talhaticx/taskly)
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
