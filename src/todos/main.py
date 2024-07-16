@@ -7,10 +7,9 @@ from todos import app
 
 
 def main():
-    """main function"""
-
     clear_terminal()
     cool_text("Todos")
+    """main function"""
     while True:
         done = app()
         if done == 0:

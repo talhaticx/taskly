@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from .taskClass import TaskClass
+from .taskClass import Task
 
 
 class Database:
