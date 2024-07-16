@@ -1,1 +1,1 @@
-settings = {"database_dir": "~/taskly/", "main_db": "main"}
+settings = {"database_dir": "~/.taskly/", "main_db": "main"}
