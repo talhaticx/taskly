@@ -4,7 +4,13 @@
 
 Make sure you have Python 3.8 or higher installed on your system.
 
-## Installation Steps
+## Automatic Installation
+
+```bash
+pip install taskly
+```
+
+## Manual Installation Steps
 
 1. **Clone the Repository:**
 
