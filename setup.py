@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
-from src.Version import VERSION
 
 if __name__ == "__main__":
     try:
         setup(
-            version=VERSION,
+            version='0.1.4',
             use_scm_version={"version_scheme": "no-guess-dev"},
             # packages=find_packages(where='src'),
             # package_dir={'': 'src'},
