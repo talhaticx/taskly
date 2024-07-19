@@ -4,7 +4,7 @@
 
 Make sure you have Python 3.8 or higher installed on your system.
 
-## Automatic Installation
+## Automatic Installation - Temporary Down due to bug
 
 ```bash
 pip install taskly
