@@ -49,8 +49,7 @@ def todo(name: str):
         elif choice == "5":
             printList(todos)
             id = console.input("[b][i]Enter id to mark as completed:[/i][/b] ")
-            db.update_completed(id, completed=True)
-
+            db.update_completed(id)
         elif choice == "6":
             printList(todos)
             ids = console.input("[b][i]Enter id to mass remove:[/i][/b] ")

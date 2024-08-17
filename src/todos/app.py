@@ -17,7 +17,7 @@ def app():
     
     settings: dict = Settings.get_data()['settings']
 
-    db_file: str = os.path.expanduser(f"{Settings.get_data()["settings"]["database_dir"]}{Settings.get_data()["settings"]["main_db"]}.db")
+    db_file: str = os.path.expanduser(f"{Settings.get_data()['settings']['database_dir']}{Settings.get_data()['settings']['main_db']}.db")
 
     # Ensure the directory exists
     db_dir: str = os.path.dirname(db_file)
