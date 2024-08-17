@@ -12,7 +12,7 @@ def printList(list: list):
     try:
         print()
         for idx, item in enumerate(list):
-            console.print(f" id: [i]%2d[/i], title: [i] {item[0]}[/i], completed: {":white_heavy_check_mark:" if item[3] else ":x:"}" % (idx + 1), style="green bold" )
+            console.print(f" id: [i]%2d[/i], title: [i] {item[0]}[/i], completed: {':white_heavy_check_mark:' if item[3] else ':x:'}" % (idx + 1), style="green bold" )
         print()
     except:
         print()

@@ -21,7 +21,7 @@ class Database:
     """
 
     def __init__(self, name):
-        db_file = os.path.expanduser(f"{Settings.get_data()["settings"]["database_dir"]}{name}.db")
+        db_file = os.path.expanduser(f"{Settings.get_data()['settings']['database_dir']}{name}.db")
 
         # Ensure the directory exists
         db_dir = os.path.dirname(db_file)
