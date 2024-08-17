@@ -12,12 +12,12 @@ def printList(list: list):
     try:
         print()
         for idx, item in enumerate(list):
-            console.print(f" id: [i]%2d[/i], title: [i] {item[0]}[/i], completed: {':white_heavy_check_mark:' if item[3] else ':x:'}" % (idx + 1), style="green bold" )
+            console.print(f" ID: [i]%4d[/i], Title: [i]{item[1]:<30}[/i], completed: {':white_heavy_check_mark:' if item[3] else ':x:'}" % (idx + 1), style="green bold")
         print()
     except:
         print()
         for item in range(len(list)):
-            console.print(f" id: [i]%2d[/i], title: [i] {list[item][0]}[/i]" % (item + 1), style="green bold" )
+            console.print(f" ID: [i]%4d[/i], Title: [i] {list[item][1]:<30}[/i]" % (item + 1), style="green bold" )
         print()
         
 def printMenu():
