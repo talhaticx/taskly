@@ -1,7 +1,10 @@
 # TASKLY : A Todos CLI Application 
 
 **Taskly** version 0.1.5 is a command-line interface (CLI) based application for managing tasks across multiple databases. It allows users to create, manage, and organize tasks within different databases, providing flexibility and ease of use for personal task management needs.
+---
 
+![image](https://github.com/user-attachments/assets/32721059-54c0-4383-b53a-4ba6580346e2)
+---
 ## Features
 
 - **Database Management**: Create, list, delete, and switch between task databases.
